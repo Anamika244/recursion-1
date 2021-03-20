@@ -1,0 +1,36 @@
+#include<stdio.h>
+int primeno(int ,int);// function definition
+int main()
+{
+	int n,c;
+	printf("Enter a number to check if it is prime number");
+	scanf("%d",&n);
+	c= primeno(n,n/2);
+	if (c==1)
+	{
+		printf("The given number %d is prime number",n);
+	}
+	else
+	{
+		printf("The given number %d is not prime number",n);
+	}
+	return 0;
+}
+int primeno(int num, int i)// function to check the number if it is prime number or not
+{
+	if (i==1)
+	{
+		return 1;
+	}
+	else
+	{
+		if ((num %i)==0)
+		{
+			return 0;
+		}
+		else
+		{
+			return primeno(num, i-1);//recursion
+		}
+	}
+}
